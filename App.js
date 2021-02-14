@@ -1,18 +1,21 @@
 import React from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+import { Provider } from 'react-redux';
+import { View } from 'react-native';
+
+import store from './src/redux/store';
+import LoginPage from './src/components/LoginPage';
 
 const App: () => React$Node = () => {
   return (
-    <View style={{
-      flex:1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <Text>Login</Text>
-    </View>
+      <Provider store={store}>
+        <View style={{
+          flex:1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+            <LoginPage />
+        </View>
+      </Provider>
   );
 };
 
